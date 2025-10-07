@@ -1,13 +1,18 @@
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import { Homepage } from "./pages/Homepage";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 function App() {
-  
-
   return (
-    <div className='text-primary w-screen h-screen flex flex-col items-center justify-center'>
-      <h1> working </h1>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
