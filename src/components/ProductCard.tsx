@@ -1,4 +1,5 @@
 import React from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 // import { useCart } from '../context/CartContext'
 
 type Product = {
@@ -15,8 +16,11 @@ const ProductCard: React.FC<{ product: Product; showAdd?: boolean }> = ({ produc
 
 console.log(product)
 
+
+const navigate = useNavigate();
+
   return (
-    <div className="border rounded p-4 bg-white shadow-sm flex flex-col">
+    <div onClick = {() => navigate("/product")} className="border rounded p-4 bg-white shadow-sm flex flex-col">
     
       <img src={product.imageUrl} alt={product.name} className="w-full h-40 object-cover rounded" />
       <h3 className="mt-3 font-semibold text-gray-800">{product.name}</h3>
