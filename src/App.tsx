@@ -1,28 +1,18 @@
-import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import MenuPage from "../src/pages/MenuPage.tsx";
+// import { Homepage } from "./pages/Homepage";
+import MenuPage from "./pages/MenuPage";
 
 function App() {
-  
-
   return (
-
-    <>
+    <div className="text-secondary-content w-screen flex flex-col items-center justify-center">
       <BrowserRouter>
         <Routes>
-          <Route
-          path="/"
-          element={
-            <div className="text-primary w-screen h-screen flex flex-col items-center justify-center">
-              <h1>working</h1>
-            </div>
-          }
-          />
+          {/* <Route path="/" element={<Homepage />} /> */}
           <Route path="/menu" element={<MenuPage />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
+  );
+}
 
-
-)}
-export default App
+export default App;
